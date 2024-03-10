@@ -1,326 +1,294 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <title>PS3Xploit Team -[ Making The PS3 Great Again!!! ]-</title>
+	<title>PS3 Legends</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<style type="text/css">body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-image: url("image.png");
+}
+.container {
+    margin: 20px auto;
+    width: 95%;
+}
+
+/* general styles */
+.menu, .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu {
+    height: 58px;
+}
+.menu li {
+       background: -moz-linear-gradient(#292929, transparent);
+    background: -ms-linear-gradient(#292929, transparent);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(#292929, transparent);
+    background: -o-linear-gradient(#292929, transparent);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
+    background: linear-gradient(transparent);
+
+    border-bottom: 2px solid #02004C;
+    border-top: 2px solid #02004C;
+    min-width: 160px;
+}
+.menu > li {
+    display: block;
+    float: left;
+    position: relative;
+}
+.menu > li:first-child {
+    border-radius: 5px 0 0;
+}
+.menu a {
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    color: #ffffff;
+    display: block;
+    font-family: 'Lucida Console';
+    font-size: 18px;
+    line-height: 54px;
+    padding: 0 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* onhover styles */
+.menu li:hover {
+    background-color: #1c1c1c;
+    background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+    background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+    background: linear-gradient(#1c1c1c, #1b1b1b);
+
+    border-bottom: 2px solid #222222;
+    border-top: 2px solid #1B1B1B;
+}
+.menu li:hover > a {
+    border-radius: 5px 0 0 0;
+    border-left: 3px solid #0000FF;
+    color: #0000FF;
+}
+
+/* submenu styles */
+.submenu {
+    left: 0;
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 0;
+
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+}
+.submenu li {
+    opacity: 0;
+
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+
+    -webkit-transition: opacity .4s, -webkit-transform .5s;
+    -moz-transition: opacity .4s, -moz-transform .5s;
+    -ms-transition: opacity .4s, -ms-transform .5s;
+    -o-transition: opacity .4s, -o-transform .5s;
+    transition: opacity .4s, transform .5s;
+}
+.menu .submenu li:hover a {
+    border-left: 3px solid #454545;
+    border-radius: 0;
+    color: #ffffff;
+}
+.menu > li:hover .submenu, .menu > li:focus .submenu {
+    max-height: 2000px;
+    z-index: 10;
+}
+.menu > li:hover .submenu li, .menu > li:focus .submenu li {
+    opacity: 1;
+
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+/* CSS3 delays for transition effects */
+.menu li:hover .submenu li:nth-child(1) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+.menu li:hover .submenu li:nth-child(2) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.menu li:hover .submenu li:nth-child(3) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.menu li:hover .submenu li:nth-child(4) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.menu li:hover .submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.menu li:hover .submenu li:nth-child(6) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.menu li:hover .submenu li:nth-child(7) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.menu li:hover .submenu li:nth-child(8) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.menu li:hover .submenu li:nth-child(9) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+      
+.submenu li:nth-child(1) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+.submenu li:nth-child(2) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.submenu li:nth-child(3) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.submenu li:nth-child(4) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.submenu li:nth-child(6) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.submenu li:nth-child(7) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.submenu li:nth-child(8) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.submenu li:nth-child(9) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+	</style>
 </head>
-<!-- <body bgcolor="#ffffff" onload="warning();"> -->
-<body bgcolor="#ffffff" onload="info();">
-<body bgcolor="#ffffff">
-
-
-
-<!-- Start PureCSSMenu.com STYLE -->
-<style>
-#pcm{display:none;}
-ul.pureCssMenu ul{display:none}
-ul.pureCssMenu li:hover>ul{display:block}
-ul.pureCssMenu ul{position: absolute;left:-1px;top:98%;}
-ul.pureCssMenu ul ul{position: absolute;left:98%;top:-2px;}
-ul.pureCssMenu,ul.pureCssMenu ul {
-	margin:0px;
-	list-style:none;
-	padding:0px 2px 2px 0px;
-	background-color:#ffffff;
-	background-repeat:repeat;
-	border-color:#AAAAAA;
-	border-width:1px;
-	border-style:solid;
-}
-ul.pureCssMenu table {border-collapse:collapse}ul.pureCssMenu {
-	display:block;
-	zoom:1;
-	float: left;
-}
-ul.pureCssMenu ul{
-	width:166.95000000000002px;
-}
-ul.pureCssMenu li{
-	display:block;
-	margin:2px 0px 0px 2px;
-	font-size:0px;
-}
-ul.pureCssMenu a:active, ul.pureCssMenu a:focus {
-outline-style:none;
-}
-ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
-	display:block;
-	vertical-align:middle;
-	background-color:#ffffff;
-	border-width:0px;
-	border-color:#6655ff;
-	border-style:solid;
-	text-align:left;
-	text-decoration:none;
-	padding:4px;
-	_padding-left:0;
-	font:normal 11px Verdana;
-	color: #444444;
-	text-decoration:none;
-	cursor:default;
-}
-ul.pureCssMenu span{
-	overflow:hidden;
-}
-ul.pureCssMenu li {
-	float:left;
-}
-ul.pureCssMenu ul li {
-	float:none;
-}
-ul.pureCssMenu ul a {
-	text-align:left;
-	white-space:nowrap;
-}
-ul.pureCssMenu li.sep{
-	text-align:center;
-	padding:0px;
-	line-height:0;
-	height:100%;
-}
-ul.pureCssMenu li.sep span{
-	float:none;	padding-right:0;
-	width:5;
-	height:16;
-	display:inline-block;
-	background-color:#AAAAAA;	background-image:none;}
-ul.pureCssMenu ul li.sep span{
-	width:80%;
-	height:3;
-}
-ul.pureCssMenu li:hover{
-	position:relative;
-}
-ul.pureCssMenu li:hover>a{
-	background-color:#4792E6;
-	border-color:#665500;
-	border-style:solid;
-	font:normal 11px Verdana;
-	color: #ffffff;
-	text-decoration:none;
-}
-ul.pureCssMenu li a:hover{
-	position:relative;
-	background-color:#4792E6;
-	border-color:#665500;
-	border-style:solid;
-	font:normal 11px Verdana;
-	color: #ffffff;
-	text-decoration:none;
-}
-ul.pureCssMenu li.dis a {
-	color: #AAAAAA !important;
-}
-ul.pureCssMenu img {border: none;float:left;_float:none;margin-right:4px;width:16px;
-height:16px;
-}
-ul.pureCssMenu ul img {width:16px;
-height:16px;
-}
-ul.pureCssMenu img.over{display:none}
-ul.pureCssMenu li.dis a:hover img.over{display:none !important}
-ul.pureCssMenu li.dis a:hover img.def {display:inline !important}
-ul.pureCssMenu li:hover > a img.def  {display:none}
-ul.pureCssMenu li:hover > a img.over {display:inline}
-ul.pureCssMenu a:hover img.over,ul.pureCssMenu a:hover ul img.def,ul.pureCssMenu a:hover a:hover ul img.def,ul.pureCssMenu a:hover a:hover img.over,ul.pureCssMenu a:hover a:hover a:hover img.over{display:inline}
-ul.pureCssMenu a:hover img.def,ul.pureCssMenu a:hover ul img.over,ul.pureCssMenu a:hover a:hover ul img.over,ul.pureCssMenu a:hover a:hover img.def,ul.pureCssMenu a:hover a:hover a:hover img.def{display:none}
-ul.pureCssMenu a:hover ul,ul.pureCssMenu a:hover a:hover ul{display:block}
-ul.pureCssMenu a:hover ul ul{display:none}
-ul.pureCssMenu span{
-	display:block;
-	background-image:url(./images/arrv_anim_1.gif);
-	background-position:right center;
-	background-repeat: no-repeat;
-   padding-right:11px;}
-ul.pureCssMenu li:hover>a>span{	background-image:url(./images/arrv_anim_1o.gif);
-}
-ul.pureCssMenu a:hover span{	_background-image:url(./images/arrv_anim_1o.gif)}
-ul.pureCssMenu ul span,ul.pureCssMenu a:hover table span{background-image:url(./images/arr_double_1.gif)}
-ul.pureCssMenu ul li:hover > a span{	background-image:url(./images/arr_double_1o.gif);}
-ul.pureCssMenu table a:hover span,ul.pureCssMenu table a:hover a:hover span{background-image:url(./images/arr_double_1o.gif)}
-ul.pureCssMenu table a:hover table span{background-image:url(./images/arr_double_1.gif)}
-
-/*
-	 CSS-Tricks Example
-	 by Chris Coyier
-	 http://css-tricks.com
-*/
-
-*					{ margin: 0; padding: 0; }
-body				{ font: 15px Cambria, Serif;
-	 				  background: url(images/bg-solid.png) no-repeat; background-color: black;}
-
-h1					{ font: 36px Georgia, Serif; }
-a					{ color: white; }
-
-#page-wrap			{ width: 40%; margin: 40px auto;
-	 				  background: url(images/bg-blurry.png) no-repeat fixed;
-	 				  border: 10px solid white; padding: 70px;
-					  min-height: 600px; color: white;
-					  -moz-border-radius: 30px; -webkit-border-radius: 30px; }
-</style>
-<!-- End PureCSSMenu.com STYLE -->
-
-
-<!-- Start PureCSSMenu.com MENU -->
-<ul class="pureCssMenu pureCssMenum">
-	<li class="pureCssMenui"><a class="pureCssMenui" href="http://ps3xploit.me/">PS3Xploit</a></li>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>PS3HEN</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-	<li class="pureCssMenui"><a class="pureCssMenui" href="hen/installer/auto/index.html" title="HEN Auto Installer" target="_blank">HEN Auto Installer</a></li>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="hen/installer/index.html" title="HEN Installer (thanks lmn7)" target="_blank">HEN Installer/Enabler</a></li>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="https://ps3addict.github.io/alternate/" title="HEN Installer (RemotePlay) (thanks lmn7, DeViL303, xp3riments)" target="_blank">HEN Installer (Alternate)</a></li>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.90 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/490/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.90 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.90_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
+<body class="bg">
+<div class="container" id="main" role="main">
+<ul class="menu">
+	<li><a href="#s1">Hybrid Firmware</a>
+	<ul class="submenu">
+		<li><a href="https://d88f3a65-4dd8-4ae9-b98a-83eb419a9210-00-3c65l1c57f3qx.pike.replit.dev/">Auto Installer</a></li>
 	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.89 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/489/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.89 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.89_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
+	</li>
+<ul class="menu">
+	<li><a href="#s1">HOMEBREW</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/fr5894tzyr13u6l/MultiMan_v4.84_HEN_by_PS3_Legends.pkg/file">Multiman</a></li>
+		<li><a href="https://www.mediafire.com/file/p4tnfiy71s16utl/WebMan+v1.47.45+by+PS3+Legends.pkg/file">Webman</a></li>
+		<li><a href="https://www.mediafire.com/file/4gtdqzb04bxmkmo/IrisMan+4.91+by+PS3+Legends.pkg/file">Irisman</a></li>
+		<li><a href="https://www.mediafire.com/file/nr146r7tb3sgb9d/Apollo+Save+Tool.pkg/file">Apollo</a></li>
 	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.88 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/488/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.88 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.88_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
+	</li>
+	<li><a href="#s1">STORES</a>
+	<ul class="submenu">
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+ 		<li><a href=""></a></li>
 	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.87 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/487/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.87 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.87_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.86 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/486/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.86 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.86_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.85 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/485/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.85 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.85_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.84 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/484/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.84 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.84_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.83 HFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/483/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.83 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.83_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.82 OFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/482/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.82 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.82_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.81 OFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/481/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.81 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.81_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.80 OFW</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/480/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.80 CEX" target="_blank">HEN Installer PKG</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.80_FW.zip" title="Download Release Files" target="_blank">Download Release Files</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>** Developers Only **</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/blind/" title="Enable HAN + Blind Flash" target="_blank">Enable HAN Blind Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.82_DEX_FW.zip" title="4.82 DEX OFW" target="_blank">4.82 DEX OFW</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.84_DEX_FW.zip" title="4.84 DEX HFW" target="_blank">4.84 DEX HFW</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2-Developers-Only.zip" title="Download Developer Files" target="_blank">Download Developer Files</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="https://github.com/PS3Xploit/PS3HEN" title="PS3HEN Source" target="_blank">PS3HEN Source</a></li>
-	</ul>
-	<li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Report a Bug</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul class="pureCssMenum">
-		<li class="pureCssMenui"><a class="pureCssMenui" href="https://www.psx-place.com/threads/support-thread-ps3hen-bugs-problems-and-other-issues.37327/" title="Main Support Thread" target="_blank">Main Support Thread</a></li>
-		<li class="pureCssMenui"><a class="pureCssMenui" href="https://www.psx-place.com/forums/PS3HEN/" title="PSX-Place HEN Forum" target="_blank">PSX-Place HEN Forum</a></li>
-		</li>
-	</ul>
-	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+	</li>
+	<li><a href="#s2">ONLINE GTA5</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/zac5jb7h93n178g/ONLINE_GTA5_BLES01807.pkg/file">BLES01807</a></li>
+		<li><a href="https://www.mediafire.com/file/1ep08gy0mgukinp/BLUSONLINE+GTA5+31156.pkg/file">BLUS31156</a></li>
+		<li><a href="https://www.mediafire.com/file/w0rrkbr0lxdvzdi/ONLINE+GTA5+NPEB01283.pkg/file">NPEB01283</a></li>
+		<li><a href="https://www.mediafire.com/file/gta6es8gae4kqiy/ONLINE+GTA5+NPUB31154.pkg/file">NPUB31154</a></li>
 </ul>
-<a id="pcm" href=""></a>
-<!-- End PureCSSMenu.com MENU -->
-
-
-
-<!-- (c) 2009, PureCSSMenu.com -->
-
-
-<br>
-
-<div id="page-wrap">
-	<center>
-	<b><font color="#ABABAB">
-	<center><img src="images/ps3xploit-logo.png"></img></center>
-	<h1><u>The PS3Xploit Team:</u><br><i></font></h1><br>
-	<h2><font color="#FFFFFF">
-	W<br>
-	esc0rtd3w<br>
-	bguerville<br>
-	Habib<br>
-	Joonie<br><br></b></h2><h3>
-	<hr>
-	<img src="images/warning.png" width="64" height="64"></img><br>
-	<font color="#FF0000" size="2.5">The domain ps3xploit.cc is a clone site and may be malicious.</font><br>
-	
-	<font color="#0099FF" size="2.5">The domains ps3xploit.com, ps3xploit.net, and ps3xploit.org have been unlawfully seized and should be considered unofficial and potentially dangerous to use.</font><br>
-	<hr><br>
-	<font size="5" color="#FFFFFF">Recommended Firmware:</font><br>
-	<font color="#FFFFFF">CFW-Compatible: </font><font color="#00BB00">4.90 OFW</font> / <font color="#FFFFFF">PS3HEN: </font><font color="#00BB00">4.90 HFW</font><br><br>
-	<font color="#FFFFFF"><a href="https://www.ps3toolset.com" target="_blank">bguerville's PS3 Toolset (Supports Firmware 4.75 - 4.90)</a></font><br><br>
-	
-	<font size="5" color="#FF0000">WARNING:</font><br>
-	<font size="4" color="#FF0000">** DO NOT ENABLE FSM (Factory Service Mode) WITH PS3HEN! **</font><br>
-	<font size="4" color="#FF0000">** DO NOT INSTALL CCAPI WITH PS3HEN! **</font><br><br>
-	
-	<a href="https://www.psx-place.com/threads/hfw-4-90-1-hybrid-firmware.39758/" target="_blank">4.90.1 HFW (Hybrid Firmware) (thanks Joonie)</a><br><br>
-	
-	<a href="https://www.psx-place.com/threads/support-thread-ps3hen-bugs-problems-and-other-issues.37327/" target="_blank"><font size="4" color="#ff5522">Please click here to report problems with PS3HEN</font></a><br><br>
-	<a href="https://www.psx-place.com/threads/ps3hen-v2-0-0-official-update-new-features-include-ps3iso-support-kernel-plugins-a-ps3hen-faq.23955/" target="_blank">PS3HEN v3 Official Thread</a><br><br>
-	
-	<font color="#f4d142">
-	If anyone would like to support the PS3Xploit Team, to help with server costs, and to further progress research & development, please see link below.<br><br>
-	Thank You To All!<br><br>
-	</font>
-	<center><a href="https://www.paypal.me/nopsn" target="_blank"><img src="images/paypal-donate.png"/></a><br><a href="https://www.paypal.me/nopsn" target="_blank">https://www.paypal.me/nopsn</a></center><br><br><hr><br>
-	<font color="#0099FF">
-	Many thanks to xerpi for porting the memory leak exploit to ps3,<br>
-	zecoxao & Joonie for their early & renewed support,<br> 
-	mysis for documenting vsh/lv2,<br>
-	kakaroto for the PS3 IDA tools, naherwert for scetool,<br>
-	Rebug Team for producing/updating the only CFW adequate to develop this work,<br>
-	Cobra team for sharing their CobraUSB source,<br>
-	the psdevwiki team of course,<br>
-	STLcardsWS for his long standing contribution & ever constant support.<br>
-	We also wish to thank all the ps3 community hackers/devs,<br>
-	past & present,who directly or indirectly helped us put this project together, you know who you are...</h3><br><br></font>
-	<h1>Official Support Forum:<br></h1>
-	<h2><a href="http://www.psx-place.com/forums/PS3Xploit/" target="_blank">http://www.psx-place.com/forums/PS3Xploit/</a></h2><br>
-	<h2>Social Media:<br></h2>
-	<h2><a href="https://gab.com/PS3Xploit" target="_blank">https://gab.com/PS3Xploit</a></h2><br>
-	<font color="#4040A2">
-	<p>PS3Xploit Logo by <a href="https://twitter.com/StarMelter" target="_blank">StarMelter</a><p>
-	</font></b>
-	</center>
 </div>
-<script>
-function warning(){alert('*ATTENTION for 3.2.0* For those having freezing issues, and have old plugins, you can use the R2 button while hen is enabling to bypass plugins, you can also place a blank boot_plugins.txt on USB drive. This will allow you to remove any plugins that are causing crashing, like outdated webmanmod. via aldostools - It is highly recommended to update to webMAN MOD 1.47.44 BEFORE upgrade to PS3HEN 3.2.0. We will be addressing this issue in next release, as per suggestion by Joonie.');}
-function info(){alert('PS3 Firmware 4.91 Has Been Released! We are working on updating tools to be compatible. Updates will roll out over the next days and weeks. Thanks for your patience.');}
-</script>
-<script>(function(){var js = "window['__CF$cv$params']={r:'8624943a5e9121e3',t:'MTcxMDA4NzA3MC4wMTYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
-</html> 
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+<head>
+	<title>Host PS3 Legends</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<style type="text/css">body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background-color: #223242;
+}
+.container {
+    margin: 20px auto;
+    width: 95%;
+}
+
+/* general styles */
+.menu, .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu {
+    height: 58px;
+}
+.menu li {
+       background: -moz-linear-gradient(#292929, transparent);
+    background: -ms-linear-gradient(#292929, transparent);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(#292929, transparent);
+    background: -o-linear-gradient(#292929, transparent);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
+    background: linear-gradient(transparent);
+
+    border-bottom: 2px solid #02004C;
+    border-top: 2px solid #02004C;
+    min-width: 140px;
+}
+.menu > li {
+    display: block;
+    float: left;
+    position: relative;
+}
+.menu > li:first-child {
+    border-radius: 5px 0 0;
+}
+.menu a {
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    color: #ffffff;
+    display: block;
+    font-family: 'Lucida Console';
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 25px;
+    text-decoration: none;
+}
+
+/* onhover styles */
+.menu li:hover {
+    background-color: #1c1c1c;
+    background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+    background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+    background: linear-gradient(#1c1c1c, #1b1b1b);
+
+    border-bottom: 2px solid #222222;
+    border-top: 2px solid #1B1B1B;
+}
+.menu li:hover > a {
+    border-radius: 5px 0 0 0;
+    border-left: 3px solid #0000FF;
+    color: #0000FF;
+}
+
+/* submenu styles */
+.submenu {
+    left: 0;
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 0;
+
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+}
+.submenu li {
+    opacity: 0;
+
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+
+    -webkit-transition: opacity .4s, -webkit-transform .5s;
+    -moz-transition: opacity .4s, -moz-transform .5s;
+    -ms-transition: opacity .4s, -ms-transform .5s;
+    -o-transition: opacity .4s, -o-transform .5s;
+    transition: opacity .4s, transform .5s;
+}
+.menu .submenu li:hover a {
+    border-left: 3px solid #454545;
+    border-radius: 0;
+    color: #ffffff;
+}
+.menu > li:hover .submenu, .menu > li:focus .submenu {
+    max-height: 2000px;
+    z-index: 10;
+}
+.menu > li:hover .submenu li, .menu > li:focus .submenu li {
+    opacity: 1;
+
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+/* CSS3 delays for transition effects */
+.menu li:hover .submenu li:nth-child(1) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+.menu li:hover .submenu li:nth-child(2) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.menu li:hover .submenu li:nth-child(3) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.menu li:hover .submenu li:nth-child(4) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.menu li:hover .submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.menu li:hover .submenu li:nth-child(6) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.menu li:hover .submenu li:nth-child(7) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.menu li:hover .submenu li:nth-child(8) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.menu li:hover .submenu li:nth-child(9) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+      
+.submenu li:nth-child(1) {
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+.submenu li:nth-child(2) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.submenu li:nth-child(3) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.submenu li:nth-child(4) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.submenu li:nth-child(5) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.submenu li:nth-child(6) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+.submenu li:nth-child(7) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.submenu li:nth-child(8) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.submenu li:nth-child(9) {
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    -ms-transition-delay: 0ms;
+    -o-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+  					{ margin: 0; padding: 0; }
+body				{ font: 15px Cambria, Serif;
+
+h1					{ font: 36px Georgia, Serif; }
+a					{ color: white; }
+
+#page-wrap		{ width: 44%; margin: 45px auto;
+	 				  border: 10px solid #02004C; padding: 65px;
+					  min-height: 600px;  color: #02004C;
+					  -moz-border-radius: 30px; -webkit-border-radius: 30px; }
+</style>
+</head>
+<body class="bg">
+<div class="container" id="main" role="main">
+    <ul class="menu">
+	<li><a href="#s1">HEN</a>
+	<ul class="submenu">
+		<li><a href="Hen/Official/Install.html">HEN Auto Installer</a></li>
+	</ul>
+	</li>
+	<li><a href="#s1">PS3HFW</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/pq956xneajvldxt/HFW+4.91+by+PS3+Legends.rar/file">HFW 4.91</a></li>
+		<li><a href="https://www.mediafire.com/file/c9e8ro1c37cybev/HFW+4.90+by+PS3+Legends.rar/file">HFW 4.90</a></li>
+		<li><a href="https://www.mediafire.com/file/siwbxpe1gromehe/HFW+4.89+by+PS3+Legends.rar/file">HFW 4.89</a></li>
+		<li><a href="https://www.mediafire.com/file/b3ugk78vxakxkq2/HFW+4.88+by+PS3+Legends.rar/file">HFW 4.88</a></li>
+		<li><a href="https://www.mediafire.com/file/5q6qipezremea29/HFW+4.87+by+PS3+Legends.rar/file">HFW 4.87</a></li>
+ 		<li><a href="https://www.mediafire.com/file/7muhtjceo41amdx/HFW+4.86+by+PS3+Legends.rar/file">HFW 4.86</a></li>
+ 		<li><a href="https://www.mediafire.com/file/ukquv52c5nv8eqy/HFW+4.85+by+PS3+Legends.rar/file">HFW 4.85</a></li>
+ 		<li><a href="https://www.mediafire.com/file/g48l3gdowhg976g/HFW+4.84+by+PS3+Legends.rar/file">HFW 4.84</a></li>
+ 		<li><a href="https://www.mediafire.com/file/gye5ugdlyj359jb/HFW_4.83_by_PS3_Legends.rar/file">HFW 4.83</a></li>
+ 	</ul>
+	</li>
+	<li><a href="#s1">PS3OFW</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/k2nxw1ces475vs6/OFW_4.91_by_PS3_Legends.rar/file">OFW 4.91</a></li>
+		<li><a href="https://www.mediafire.com/file/z4bxflbvqejslhu/OFW+4.90+by+PS3+Legends.rar/file">OFW 4.90</a></li>
+		<li><a href="https://www.mediafire.com/file/p0ph98o4adi90jv/OFW_4.89_by_PS3_Legends.rar/file">OFW 4.89</a></li>
+		<li><a href="https://www.mediafire.com/file/2ck6u6glogbtnt1/OFW_4.88_by_PS3_Legends.rar/file">OFW 4.88</a></li>
+		<li><a href="https://www.mediafire.com/file/qck9r58n00a1d2z/OFW_4.87_by_PS3_Legends.rar/file">OFW 4.87</a></li>
+ 		<li><a href="https://www.mediafire.com/file/y97u49ojxke2v62/OFW_4.86_by_PS3_Legends.rar/file">OFW 4.86</a></li>
+ 		<li><a href="https://www.mediafire.com/file/z0tumb8aemjqggg/OFW_4.85_by_PS3_Legends.rar/file">OFW 4.85</a></li>
+ 		<li><a href="https://www.mediafire.com/file/ga7kj62ktxxywmw/OFW_4.84_by_PS3_Legends.rar/file">OFW 4.84</a></li>
+ 		<li><a href="https://www.mediafire.com/file/k0xp58ro8cszuj5/OFW_4.83_by_PS3_Legends.rar/file">OFW 4.83</a></li>
+ 		<li><a href="https://www.mediafire.com/file/j2ol56bt3yfka7e/OFW_4.82_by_PS3_Legends.rar/file">OFW 4.82</a></li>
+ 		<li><a href="https://www.mediafire.com/file/ggr19x9737fa577/OFW_4.81_by_PS3_Legends.rar/file">OFW 4.81</a></li>
+ 		<li><a href="https://www.mediafire.com/file/zd7chz363jqqvsd/OFW_4.80_by_PS3_Legends.rar/file">OFW 4.80</a></li>
+ 	</ul>
+	</li>
+    <ul class="menu">
+	<li><a href="#s1">APPS</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/y4l6b6x3e998bse/Movian+by+PS3+Legends.pkg/file">MOVIAN</a></li>
+		<li><a href="https://www.mediafire.com/file/v2lv2dankyp69c8/Netflix+by+PS3+Legends.pkg/file">NETFLIX</a></li>
+		<li><a href="https://www.mediafire.com/file/lqr3kn3ldtmd8fs/Spotify+by+PS3+Legends.pkg/file">SPOTIFY</a></li>
+		<li><a href="https://www.mediafire.com/file/mkydr8vy3xm7jvn/Twitch+by+PS3+Legends.pkg/file">TWITCH</a></li>
+		<li><a href="https://www.mediafire.com/file/pz031dszewc4cdz/Vevo+by+PS3+Legends.pkg/file">VEVO</a></li>
+		<li><a href="https://www.mediafire.com/file/xwia2wqqnq1on13/YouTube+by+PS3+Legends.pkg/file">YOUTUBE</a></li>
+	</ul>
+	</li>
+    <ul class="menu">
+	<li><a href="#s2">HOMEBREW</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/qfq2uaf1u8al7mz/Apollo+Save+Tool+v2.0.0+by+PS3+Legends.pkg/file">Apollo Save Tool</a></li>
+		<li><a href="https://www.mediafire.com/file/ns5k71nkieq1334/ArtemisPS3+by+PS3+Legends.pkg/file">ArtemisPS3</a></li>
+		<li><a href="https://www.mediafire.com/file/4gtdqzb04bxmkmo/IrisMan+4.91+by+PS3+Legends.pkg/file">Irisman</a></li>
+		<li><a href="https://www.mediafire.com/file/fr5894tzyr13u6l/MultiMan_v4.84_HEN_by_PS3_Legends.pkg/file">Multiman</a></li>
+		<li><a href="https://www.mediafire.com/file/dexg149j46fprun/webMAN+MOD+1.47.46+by+PS3+Legends.pkg/file">Webman</a></li>
+		<li><a href="https://www.mediafire.com/file/uog8d149tz3e6u3/HDD+Space+by+PS3+Legends/file">Hdd Spaces</a></li>
+	</ul>
+	</li>
+	<li><a href="#s2">STORES</a>
+	<ul class="submenu">
+		<li><a href="https://www.mediafire.com/file/x2vzeoa53v4gace/VideoStore+v2.5+by+PS3+Legends.pkg/file">VIDEOSTORE</a></li>
+		<li><a href="https://www.mediafire.com/file/wxiu5m8d7g7elto/ZukoStore+v4.5+by+PS3+Legends.pkg/file">ZUKOSTORE</a></li>
+		<li><a href="https://www.mediafire.com/file/vz0za89kkej1r2x/DuckStore+1.8+by+PS3+Legends.pkg/file">DUCKSTORE</a></li>
+		<li><a href="https://www.mediafire.com/file/qneakrvibeciqi5/PkgiStore+by+PS3+Legends.pkg/file">PKGISTORE</a></li>
+		<li><a href="https://www.mediafire.com/file/h0h3vh7t97efzep/Wiki_Store_4.90_by_PS3_Legends.pkg/file">WIKISTORE</a></li>
+ 		<li><a href="https://www.mediafire.com/file/vmfgvld5dt5622w/MaxiStore+3.5+by+PS3+Legends.pkg/file">MAXISTORE</a></li>
+ 		<li><a href="https://www.mediafire.com/file/3cce8s95u3pemox/GhostStore+v3.0+by+PS3+Legends.pkg/file">GHOSTSTORE</a></li>
+ 		<li><a href="https://www.mediafire.com/file/9emrwja7hlxcy9j/THANOSV12.pkg/file">THAMOSTORE</a></li>
+ 		<li><a href="https://www.mediafire.com/file/1z5t93nl92x7vsj/InfotecStore_v4.0_by_PS3_Legends.pkg/file">INFOTECSTORE</a></li>
+	</ul>
+	</li>
+	<li><a href="#s2">TOOLS</a>
+	<ul class="submenu">
+	    <li><a href="https://www.mediafire.com/file/mq6y1ysjn7fgbnm/English+ps3+full+hen+4.91+by+PS3+Legends.pkg/file">ENGLISH PS3 FULL HEN</a></li>
+    	<li><a href="https://www.mediafire.com/file/awizeglu0kdto60/Arabic+full+ps3+hen+by+PS3+Legends.pkg/file">ARABIC PS3 FULL HEN</a></li>
+		<li><a href="https://www.mediafire.com/file/t6i4q4ez7o1ugqw/PS3_Games_License_by_PS3_Legends.pkg/file">LICENSES GAMES</a></li>
+    	<li><a href="https://www.mediafire.com/file/jmwqj189feitvir/FIX_STORES_HEN_4.91_V4_by_PS3_Legends.pkg/file">FIX HEN STORES</a></li>
+     	<li><a href="https://www.mediafire.com/file/w7lizhl4yfntinz/FIX_STORES_Evilnat_4.91_V5_by_PS3_Legends.pkg/file">FIX CFW STORES</a></li>
+    	<li><a href="https://www.mediafire.com/file/f751cq5xp7yq4kf/Trophies_by_PS3_Legends.pkg/file">TROPHIES</a></li>
+    	<li><a href="https://www.mediafire.com/file/h7a27670wt12c4r/Update+4.90+online+4.91.pkg/file">BYPASS</a></li>
+</ul>
+</li>
+</ul>
+
+<br>
+<br>
+
+<div id="page-wrap">
+	<center>
+	<b><font color="#ABABAB">
+	<center><img src="images/PS3Legends.png"></img></center>
+	<h1><u>The PS3 Legends Team:</u><br><i></font></h1><br>
+	<h2><font color="#FFFFFF">
+	PSX<br>
+	Ahmed<br></b></h2><h3>
+	<hr>
+	<font color="#FF0000" size="3.0">The domain ps3xploit.cc is a clone site and may be malicious.</font><br>
+	<font color="#0099FF" size="2.5">The domains ps3xploit.com, ps3xploit.net, and ps3xploit.org have been unlawfully seized and should be considered unofficial and potentially dangerous to use</font><br>
+	<br>
+	<font size="5" color="#FF0000">WARNING:</font><br>
+	<font size="4" color="#FF0000">All tools have been updated to the latest update 4.91</font><br>
+	<hr>
+	<h1>Discord:<br></h1>
+	<h2><a href="https://discord.gg/Y3vAwU4Q48" target="_blank">https://discord.gg/Y3vAwU4Q48</a></h2><br>
+	<h2>Telegram:<br></h2>
+	<h2><a href="https://t.me/PS3Legends" target="_blank">https://t.me/PS3Legends</a></h2><br>
+	<h2>Telegram Host:<br></h2>
+	<h2><a href="https://t.me/Host_PS3Legends" target="_blank">https://t.me/Host_PS3Legends</a></h2><br>
+	<font color="#FFFFFF">
+	<p>All rights reserved<a href="" target="_blank"></a><p>
+	</font></b>
+	</center>
+</div>
+<script>
+function warning(){alert('*ATTENTION for 3.2.0* For those having freezing issues, and have old plugins, you can use the R2 button while hen is enabling to bypass plugins, you can also place a blank boot_plugins.txt on USB drive. This will allow you to remove any plugins that are causing crashing, like outdated webmanmod. via aldostools - It is highly recommended to update to webMAN MOD 1.47.45 BEFORE upgrade to PS3HEN 3.2.0. We will be addressing this issue in next release, as per suggestion by Joonie.');}
+function info(){alert('PS3 Firmware 4.91 Has Been Released! We are working on updating tools to be compatible. Updates will roll out over the next days and weeks. Thanks for your patience.');}
+</script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'8624943a5e9121e3',t:'MTcxMDA4NzA3MC4wMTYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>

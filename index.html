@@ -140,45 +140,50 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
+document.addEventListener("DOMContentLoaded", function() {
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
 
-      function toggleMenu() {
-        sidebar.classList.toggle("active");
-        overlay.classList.toggle("active");
-        mobileMenuBtn.innerHTML = sidebar.classList.contains("active") ? "×" : "☰";
-      }
+  function toggleMenu() {
+    if (sidebar.className.indexOf("active") === -1) {
+      sidebar.className += " active";
+      overlay.className += " active";
+      mobileMenuBtn.innerHTML = "×";
+    } else {
+      sidebar.className = sidebar.className.replace(" active", "");
+      overlay.className = overlay.className.replace(" active", "");
+      mobileMenuBtn.innerHTML = "☰";
+    }
+  }
 
-      mobileMenuBtn.addEventListener("click", toggleMenu);
-      overlay.addEventListener("click", toggleMenu);
+  mobileMenuBtn.onclick = toggleMenu;
+  overlay.onclick = toggleMenu;
 
-      document.querySelectorAll(".has-submenu > a").forEach(link => {
-        link.addEventListener("click", function(e) {
-          e.preventDefault();
-          const submenu = this.nextElementSibling;
-          
-          document.querySelectorAll(".submenu").forEach(menu => {
-            if (menu !== submenu) {
-              menu.style.display = "none";
-              menu.parentElement.classList.remove("active");
-            }
-          });
-          
-          this.parentElement.classList.toggle("active");
-          submenu.style.display = this.parentElement.classList.contains("active") ? "block" : "none";
-        });
-      });
-
-      document.addEventListener("click", function(e) {
-        if (!sidebar.contains(e.target) && e.target !== mobileMenuBtn) {
-          sidebar.classList.remove("active");
-          overlay.classList.remove("active");
-          mobileMenuBtn.innerHTML = "☰";
+  var submenuLinks = document.querySelectorAll(".has-submenu > a");
+  for (var i = 0; i < submenuLinks.length; i++) {
+    submenuLinks[i].onclick = function(e) {
+      e.preventDefault();
+      var submenu = this.nextElementSibling;
+      var allSubmenus = document.querySelectorAll(".submenu");
+      
+      for (var j = 0; j < allSubmenus.length; j++) {
+        if (allSubmenus[j] !== submenu) {
+          allSubmenus[j].style.display = "none";
+          allSubmenus[j].parentElement.className = allSubmenus[j].parentElement.className.replace(" active", "");
         }
-      });
-    });
+      }
+      
+      if (this.parentElement.className.indexOf("active") === -1) {
+        this.parentElement.className += " active";
+        submenu.style.display = "block";
+      } else {
+        this.parentElement.className = this.parentElement.className.replace(" active", "");
+        submenu.style.display = "none";
+      }
+    };
+  }
+});
   </script>
 </body>
 </html>

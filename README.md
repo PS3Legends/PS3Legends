@@ -27,9 +27,3 @@
 </div>
 
 ###
-
-<div align="center">
-  <img src="https://profile-counter.glitch.me/PS3Leganeds/count.svg?" alt="Profile counter" />
-</div>
-
-###
